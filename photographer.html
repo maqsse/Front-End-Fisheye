@@ -15,25 +15,63 @@
       <div class="photograph-header">
         <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
       </div>
+      <section class="photograph-work"></section>
+      <div class="likesAndPrice">
+        <span class="totalLikes">
+          <span class="totalLikesNumber"></span>
+          <img src="assets/icons/heart.png" alt="likes">
+        </span>
+        <span class="pricePerDay">€ / Jour</span>
+      </div>
     </main>
-    <div id="contact_modal">
+    <div class="lightbox" role="dialog">
+      <p></p>
+      <nav>
+        <img src="assets/icons/lightboxArrow.svg" alt="" tabindex="2" class="previous" aria-label="Previous image" role="link"
+              onclick="lightboxControl(event)" 
+              onkeydown="handleKeyDown(event)?lightboxControl(event):undefined">
+        <img src="assets/icons/lightboxArrow.svg" alt="" tabindex="3" class="next" aria-label="Next image" role="link"
+              onclick="lightboxControl(event)"
+              onkeydown="handleKeyDown(event)?lightboxControl(event):undefined">
+      </nav>
+      <img src="assets/icons/lightboxClose.svg" alt="" tabindex="1" class="close" aria-label="Close dialog" role="button"
+            onclick="lightboxControl(event)"
+            onkeydown="handleKeyDown(event)?lightboxControl(event):undefined">
+    </div>
+    <div id="contact_modal" role="dialog" aria-labelledby="contactMe" aria-label="image closeup view">
 			<div class="modal">
 				<header>
-          <h2>Contactez-moi</h2>
-          <img src="assets/icons/close.svg" onclick="closeModal()" />
+          <h1 id="contactMe">Contactez-moi</h1>
+          <img src="assets/icons/close.svg" alt="" tabindex="0" role="button"
+          onclick="closeModal()" 
+          onkeydown="handleKeyDown(event)?closeModal():undefined"/>
+          <h2></h2>
         </header>
-				<form>
+				<form onsubmit="return sendForm(event)">
 					<div>
-						<label>Prénom</label>
-						<input />
+						<label for="firstName" id="firstNameLabel">Prénom</label>
+						<input type="text" name="firstName" id="firstName" role="textbox" aria-label="First name" aria-labelledby="firstNameLabel" required/>
+						<label for="lastName" id="lastNameLabel">Nom</label>
+						<input type="text" name="lastName" id="lastName" role="textbox" aria-label="Last name" aria-labelledby="lastNameLabel" required/>
+						<label for="email" id="emailLabel">Email</label>
+						<input type="email" name="email" id="email" role="textbox" aria-label="Email" aria-labelledby="emailLabel" required/>
+						<label for="yourMessage" id="yourMessageLabel">Votre message</label>
+						<textarea name="yourMessage" id="yourMessage" role="textbox" aria-label="Your message" aria-labelledby="yourMessageLabel" required></textarea>
 					</div>
-          <button class="contact_button">Envoyer</button>
+          <button class="contact_button" type="submit">Envoyer</button>
 				</form>
 			</div>
 		</div>
+    
+    
     <script src="scripts/pages/photographer.js"></script>
     <script src="scripts/factories/photographer.js"></script>
-    <script src="scripts/factories/media.js"></script>
+     <script src="scripts/factories/media.js"></script> 
     <script src="scripts/utils/contactForm.js"></script>
+    <script src="https://kit.fontawesome.com/49808b2fdd.js" crossorigin="anonymous"></script>
+    <script src="scripts/utils/tabindex.js"></script>
+    <script src="scripts/utils/lightbox.js"></script>
+    <script src="scripts/utils/handleKeyDown.js"></script>
+    
   </body>
 </html>

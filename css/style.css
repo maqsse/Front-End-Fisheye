@@ -54,11 +54,12 @@ h1 {
 }
 
 #imgphotographer{
-    width: 100px;
-    height: 100px;
+    width: 200px;
+    height: 200px;
     position: relative;
-    left: 90%;
-    bottom: 80%;
+    left: 130%;
+    bottom: 30%;
+    border-radius: 100px;
 }
 .photograph-header{
     display: grid;
@@ -72,6 +73,7 @@ h1 {
 .photograph-header p{
     position: relative;
     right: 100%;
+    color: #901C1C;
 }
 
 

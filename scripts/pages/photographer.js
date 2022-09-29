@@ -10,6 +10,9 @@
                 //affichage des infos photographes
                 const blocPhotographer = document.querySelector(".photograph-header");
                 const infosPhotographer = document.createElement("div");
+                const pricePerDay = document.querySelector(".pricePerDay");
+                const userPrice = document.createTextNode(data.photographers[i].price);
+
                 blocPhotographer.appendChild(infosPhotographer);
                 const namePhotographer = document.createElement("p");
                 namePhotographer.textContent = data.photographers[i].name;
@@ -24,18 +27,22 @@
                 imgPhotographer.setAttribute("id", "imgphotographer");
                 imgPhotographer.setAttribute("src","assets/SamplePhotos/PhotographersIDPhotos/"+data.photographers[i].portrait);
                 infosPhotographer.appendChild(imgPhotographer);
-                // Affiche le nom du photographe dans la page contact
+pricePerDay.insertBefore(userPrice, pricePerDay.firstChild);
+
+// Affiche le nom du photographe dans la page contact
          
     document.querySelector(".modal header>h2").textContent = data.photographers[i].name;
     document.querySelector(".modal header>h2").setAttribute("arial-label","Contact me" +data.photographers[i].name);
+}
+                
             }
 
-           
+           return (data.photographers); 
          }
          
-        return (data.photographers); 
+        
          
-    }
+    
    getPhotographers(); 
 
 // récupération des données médias 
@@ -75,26 +82,22 @@ for (let i = 0; i < media.length; i++) {
 
 // likes
 
-    function like(event) {
-    const target = event.currentTarget;
-
-    if ( !target.hasAttribute('liked') ) {
-        target.setAttribute('liked','');
-        target.querySelectorAll(".number-likes").textContent = parseInt(target.textContent)+1;
-        updateTotalLikes();
+    function like(event){
+     const target = event.currentTarget;
+    if (!target.hasAttribute('liked')) {
+    target.setAttribute('liked','');
+    target.querySelectorAll(".number-likes").textContent = parseInt(target.textContent)+1;
+    updateTotalLikes();
     }
-}
+    }
 
 
 async function updateTotalLikes() {
-    
     const pictures = document.querySelector(".photograph-work");
     const likes = pictures.querySelectorAll(".number-likes");
     const totalLikesNumber = document.querySelector(".totalLikesNumber");
-
     let totalLikes=0;
-    likes.forEach( like => totalLikes += parseInt(like.textContent) );
-
+    likes.forEach(like => totalLikes += parseInt(like.textContent));
     totalLikesNumber.textContent = totalLikes;
 }
 //initialisation de la page

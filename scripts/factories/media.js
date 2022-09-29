@@ -54,7 +54,7 @@ let media = undefined;
         text.textContent = title;
 
         const divLikes = document.createElement( 'div' );
-        divLikes.setAttribute("onclick", 'like(event)');
+        divLikes.setAttribute("onclick", 'like(event);');
         divLikes.setAttribute("role", "button");
         divLikes.className = 'likes';
         divLikes.ariaLabel = 'likes';

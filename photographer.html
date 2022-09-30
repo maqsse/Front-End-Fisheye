@@ -11,9 +11,36 @@
     <header>
       <img src="assets/images/logo.png" class="logo" />
     </header>
-    <main id="main">
+        <main id="main">
       <div class="photograph-header">
         <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
+      </div>
+      <label class="dropdown-label">Trier par</label>
+      <div data-value="popularity" class="dropdown" aria-label="Order By"> 
+        <button onclick="dropdown(event)" tabindex="0" aria-haspopup="listbox" id="dropdownButton">Popularité</button>
+        <img src="assets/icons/arrow.svg" alt="" class="arrow">
+        <ul class="dropdown-options" role="listbox" aria-labelledby="dropdownButton" aria-activedescendant="popularityDropdown">
+          <li onclick="selectDropdownOption(event)" 
+              onkeydown="handleKeyDown(event)?selectDropdownOption(event):undefined" 
+              class="dropdown-hide" 
+              data-value="popularity" 
+              role="option"
+              id="popularityDropdown"
+              aria-selected="true"
+              tabindex="0">Popularité</li>
+          <li onclick="selectDropdownOption(event)" 
+              onkeydown="handleKeyDown(event)?selectDropdownOption(event):undefined" 
+              data-value="date" 
+              role="option"
+              id="dateDropdown"
+              tabindex="0">Date</li>
+          <li onclick="selectDropdownOption(event)" 
+              onkeydown="handleKeyDown(event)?selectDropdownOption(event):undefined" 
+              data-value="title" 
+              role="option"
+              id="titleDropdown"
+              tabindex="0">Titre</li>
+        </ul>
       </div>
       <section class="photograph-work"></section>
       <div class="likesAndPrice">

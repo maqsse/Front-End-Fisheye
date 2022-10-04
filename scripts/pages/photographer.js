@@ -84,11 +84,15 @@ for (let i = 0; i < media.length; i++) {
 
     function like(event){
      const target = event.currentTarget;
+
     if (!target.hasAttribute('liked')) {
     target.setAttribute('liked','');
-    target.querySelectorAll(".number-likes").textContent = parseInt(target.textContent)+1;
+    target.querySelector(".number-likes").textContent = parseInt
+    (target.textContent)+1;
+
     updateTotalLikes();
     }
+
     }
 
 
@@ -96,19 +100,13 @@ async function updateTotalLikes() {
     const pictures = document.querySelector(".photograph-work");
     const likes = pictures.querySelectorAll(".number-likes");
     const totalLikesNumber = document.querySelector(".totalLikesNumber");
+
     let totalLikes=0;
     likes.forEach(like => totalLikes += parseInt(like.textContent));
+
     totalLikesNumber.textContent = totalLikes;
 }
-//initialisation de la page
-   async function init() {
-    const {  media } = await getMedia();
-         displayData(media);
-         updateTotalLikes();
-         orderWork();
-         
-}
-init();
+
 
 //filtre
 function dropdown(event) {
@@ -123,6 +121,9 @@ function dropdown(event) {
     
     setTimeout( () => button.focus() , 50);
 }
+
+    
+
 
 function selectDropdownOption(event) {
     const target = event.currentTarget;
@@ -201,3 +202,12 @@ function orderWork() {
     photographWork.innerHTML = "";
     content.forEach(item => photographWork.appendChild(item));
 }
+//initialisation de la page
+async function init() {
+    const {  media } = await getMedia();
+         displayData(media);
+         updateTotalLikes();
+         orderWork();
+         
+}
+init();

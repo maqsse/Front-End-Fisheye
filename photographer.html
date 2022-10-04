@@ -51,6 +51,7 @@
         <span class="pricePerDay">€ / Jour</span>
       </div>
     </main>
+
     <div class="lightbox" role="dialog">
       <p></p>
       <nav>
@@ -65,6 +66,7 @@
             onclick="lightboxControl(event)"
             onkeydown="handleKeyDown(event)?lightboxControl(event):undefined">
     </div>
+
     <div id="contact_modal" role="dialog" aria-labelledby="contactMe" aria-label="image closeup view">
 			<div class="modal">
 				<header>
@@ -85,7 +87,7 @@
 						<label for="yourMessage" id="yourMessageLabel">Votre message</label>
 						<textarea name="yourMessage" id="yourMessage" role="textbox" aria-label="Your message" aria-labelledby="yourMessageLabel" required></textarea>
 					</div>
-          <button class="contact_button" type="submit">Envoyer</button>
+          <button class="contact_button" type="submit" id="button_contact">Envoyer</button>
 				</form>
 
 			</div>   

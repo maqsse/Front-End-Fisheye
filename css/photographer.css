@@ -7,7 +7,24 @@
     height: 300px;
     margin: 0 100px;
 }
-
+#button_contact{
+    left: 0%;
+    top: 0%;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    padding: 11px;
+    width: 170px;
+    height: 70px;
+    border: none;
+    background-color: #901C1C;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#button_contact:hover{
+    background: #DB8876;
+    color: black;
+}
 .contact_button {
     font-size: 20px;
     font-weight: bold;
@@ -20,8 +37,8 @@
     border-radius: 5px;
     cursor: pointer;
     position: relative;
-    left : 100%;
     top: 10%;
+    left: 100%;
     
 }
 
@@ -98,7 +115,7 @@ form input {
     width: 18px;
     object-fit: contain;
     transition: .2s;
-}
+    }
 
 .likes[liked] img {
     transform: scale(1.4);
@@ -172,6 +189,7 @@ form input {
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
+    color: #911C1C;
 }
 /* Hover/focus */
 
@@ -215,7 +233,7 @@ form input {
     border-radius: 5px;
     background-color: #DB8876;
     width: 50%;
-    height: 900px;
+    
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -232,7 +250,7 @@ form input {
 
 .modal header h1,
 .modal header h2 {
-    font-size: 64px;
+    
     margin: 0;
     font-weight: normal;
     text-align: start;
@@ -241,10 +259,12 @@ form input {
 
 .modal header h2 {
     width: 100%;
+    font-size: 36px;
 }
 
 .modal header img {
     cursor: pointer;
+    height: 20px;
 }
 form {
     display: flex;

@@ -1,7 +1,7 @@
 
 function mediaFactory(data){
 
-    const { id, photographerId, title, image,video, likes, date, altText} =data;
+    const { id, photographerId, title, image,video, likes, date} =data;
 
      const videoMedia = `assets/images/${video}`;
       const picture = `assets/SamplePhotos/${photographerId}"/"${image}`;
@@ -32,7 +32,7 @@ let media = undefined;
          media.setAttribute("onclick", "lightbox(event)");
         media.setAttribute("onkeydown", "handleKeyDown(event)?lightbox(event):undefined");
         media.setAttribute("aria-haspopup", "dialog");
-        media.setAttribute("aria-label", altText);
+        media.setAttribute("aria-label", title);
         media.setAttribute("tabindex", 0);
         media.dataset.date = date;
         media.className = 'thumb-img';

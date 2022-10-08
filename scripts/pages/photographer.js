@@ -1,4 +1,3 @@
-//Mettre le code JavaScript lié à la page photographer.html
 //affichage des données photographes
  async function getPhotographers() {
     const idPage = window.location.search.split('id=')[1];
@@ -15,15 +14,19 @@
 
                 blocPhotographer.appendChild(infosPhotographer);
                 const namePhotographer = document.createElement("p");
+                namePhotographer.setAttribute("id", "p1");
                 namePhotographer.textContent = data.photographers[i].name;
                 infosPhotographer.appendChild(namePhotographer);
                 const cityCountryPhotographer = document.createElement("p");
-                cityCountryPhotographer.innerHTML=data.photographers[i].city+","+data.photographers[i].country;
+                cityCountryPhotographer.setAttribute("id", "p2");
+                cityCountryPhotographer.innerHTML=data.photographers[i].city+", "+data.photographers[i].country;
                 infosPhotographer.appendChild(cityCountryPhotographer);
                 const taglinePhotographer = document.createElement("p");
+                taglinePhotographer.setAttribute("id", "p3");
                 taglinePhotographer.textContent=data.photographers[i].tagline;
                 infosPhotographer.appendChild(taglinePhotographer);
                 const imgPhotographer = document.createElement("img");
+                imgPhotographer.setAttribute("alt", data.photographers[i].name  );
                 imgPhotographer.setAttribute("id", "imgphotographer");
                 imgPhotographer.setAttribute("src","assets/SamplePhotos/PhotographersIDPhotos/"+data.photographers[i].portrait);
                 infosPhotographer.appendChild(imgPhotographer);
@@ -47,13 +50,9 @@ pricePerDay.insertBefore(userPrice, pricePerDay.firstChild);
 
 // récupération des données médias 
 async function getMedia() {
-    
     const media = await fetch('./data/photographers.json')
     .then((res) => res.json());
      return  media;
-
-
-     
 };
 
 
@@ -73,10 +72,7 @@ for (let i = 0; i < media.length; i++) {
               mediaSection.appendChild(userCardMedia);
              
  }
-
  }
-
-
 }
 
 
@@ -87,12 +83,10 @@ for (let i = 0; i < media.length; i++) {
 
     if (!target.hasAttribute('liked')) {
     target.setAttribute('liked','');
-    target.querySelector(".number-likes").textContent = parseInt
-    (target.textContent)+1;
+    target.querySelector(".number-likes").textContent = parseInt(target.textContent)+1;
 
     updateTotalLikes();
     }
-
     }
 
 
@@ -161,7 +155,7 @@ function orderWork() {
     const photographWork = document.querySelector(".photograph-work");
     let contentNodes = document.querySelectorAll('.thumb-imgfull');
     const order = document.querySelector(".dropdown").dataset.value;
-    // Converti la nodelist en array, le call appelle la nodelist en tant que 'this' dans la méthode et array.prototype défini le type de 'this'
+    // Converti en tableau
     let content = Array.prototype.slice.call(contentNodes);
     
     switch (order) {

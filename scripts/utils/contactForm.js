@@ -1,12 +1,21 @@
+
 function displayModal() {
     const modal = document.getElementById("contact_modal");
-	modal.style.display = "block";
+    tabindexSet(-1);
+	modal.classList.add("modal-show");
+    modal.querySelector("img").focus();
+
+    IsFormContactKeyListenerActive = true;
 }
 
 function closeModal() {
     const modal = document.getElementById("contact_modal");
-    modal.style.display = "none";
+    tabindexSet(0);
+	modal.classList.remove("modal-show");
+    setTimeout( () => document.querySelector("main .contact_button").focus() , 50);
+    IsFormContactKeyListenerActive = false;
 }
+
 let IsFormContactKeyListenerActive = false;
 document.addEventListener( 'keydown',
     function (event) {
@@ -37,7 +46,7 @@ function sendForm(event) {
     event.preventDefault();
 
     console.log(getFormData());
-    // Envoyer 'data' à l'email du photographe 
+    // Envoyer les données au photographe 
 
     closeModal();
     return false;

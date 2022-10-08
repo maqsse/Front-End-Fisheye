@@ -62,7 +62,7 @@ h1 {
     height: 200px;
     position: relative;
     left: 130%;
-    bottom: 30%;
+    bottom: 45%;
     border-radius: 100px;
     background: #C4C4C4;
     border-radius: 50%;
@@ -84,5 +84,17 @@ h1 {
     color: #901C1C;
 }
 
+#p1{
+    font-size: 40px;
+    color: #D3573C;
+}
+#p2{
+    color: #901C1C;
+    font-size: 24px;
+}
+#p3{
+    font-size: 18px;
+    color: #525252;
+}
 
 

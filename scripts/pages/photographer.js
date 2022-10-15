@@ -53,10 +53,10 @@ async function getMedia() {
     const media = await fetch('./data/photographers.json')
     .then((res) => res.json());
      return  media;
-};
+}
 
 
-
+// Affiche les images et vidéos du photographe
 async function displayData(media) {
         const mediaSection = document.querySelector(".photograph-work");
 
@@ -67,6 +67,7 @@ for (let i = 0; i < media.length; i++) {
      
      if( idPage == element.photographerId){
         
+            // eslint-disable-next-line no-undef
             const mediaModel = mediaFactory(element);
                const userCardMedia = mediaModel.getUserWorkDOM();
               mediaSection.appendChild(userCardMedia);
@@ -77,7 +78,7 @@ for (let i = 0; i < media.length; i++) {
 
 
 // likes
-
+    // eslint-disable-next-line no-unused-vars
     function like(event){
      const target = event.currentTarget;
 
@@ -103,6 +104,7 @@ async function updateTotalLikes() {
 
 
 //filtre
+// eslint-disable-next-line no-unused-vars
 function dropdown(event) {
     const button = event.currentTarget;
     const dropdown = button.parentNode;
@@ -119,6 +121,7 @@ function dropdown(event) {
     
 
 
+// eslint-disable-next-line no-unused-vars
 function selectDropdownOption(event) {
     const target = event.currentTarget;
     const option = target.dataset.value;
@@ -160,7 +163,7 @@ function orderWork() {
     
     switch (order) {
         case "popularity":
-            // De + à -
+            // ordre décroissant
             content.sort(
                 function(item, nextItem){
                     let firstNumber = parseInt(item.querySelector(".number-likes").textContent);
@@ -169,7 +172,7 @@ function orderWork() {
                 }
             )
             break;
-        case "date":
+            case "date":
             // De + à -
             content.sort(
                 function(item, nextItem){
@@ -179,7 +182,7 @@ function orderWork() {
                 }
             )
             break;
-        case "title":
+            case "title":
             // De A à B
             content.sort(
                 function(item, nextItem){
@@ -198,6 +201,7 @@ function orderWork() {
 }
 //initialisation de la page
 async function init() {
+    // Récupère les données des photographes avant de charger le reste des fonctions
     const {  media } = await getMedia();
          displayData(media);
          updateTotalLikes();

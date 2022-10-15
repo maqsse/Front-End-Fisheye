@@ -26,8 +26,12 @@
         <li onclick="selectDropdownOption(event)" onkeydown="handleKeyDown(event)?selectDropdownOption(event):undefined"
           class="dropdown-hide" data-value="popularity" role="option" id="popularityDropdown" aria-selected="true"
           tabindex="0">Popularité</li>
-        <li onclick="selectDropdownOption(event)" onkeydown="handleKeyDown(event)?selectDropdownOption(event):undefined"
-          data-value="date" role="option" id="dateDropdown" tabindex="0">Date</li>
+          <li onclick="selectDropdownOption(event)" 
+              onkeydown="handleKeyDown(event)?selectDropdownOption(event):undefined" 
+              data-value="date" 
+              role="option"
+              id="dateDropdown"
+              tabindex="0">Date</li>
         <li onclick="selectDropdownOption(event)" onkeydown="handleKeyDown(event)?selectDropdownOption(event):undefined"
           data-value="title" role="option" id="titleDropdown" tabindex="0">Titre</li>
       </ul>
@@ -36,7 +40,7 @@
     <div class="likesAndPrice">
       <span class="totalLikes">
         <span class="totalLikesNumber"></span>
-        <img src="assets/icons/heart.png" alt="likes">
+        <img src="assets/icons/heart.svg" alt="likes">
       </span>
       <span class="pricePerDay">€ / Jour</span>
     </div>

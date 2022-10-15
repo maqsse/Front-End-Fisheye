@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 let IsLightboxKeyListenerActive = false;
 document.addEventListener( 'keydown',
     function (event) {
@@ -11,6 +12,7 @@ function getWorks() {
     return Array.prototype.slice.call(worksNodes);
 }
 
+// eslint-disable-next-line no-unused-vars
 function lightbox(event) {
     const target = event.currentTarget;
     const work = target.parentNode;
@@ -62,6 +64,7 @@ function loadLightbox() {
     lightboxText.textContent = currentText;
 }
 
+// eslint-disable-next-line no-unused-vars
 function lightboxControl(event) {
     switch (event.currentTarget.className) {
         case "next":

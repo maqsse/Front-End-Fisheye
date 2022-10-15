@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 function photographerFactory(data) {
     const { name, portrait, id, tagline, city, country, price } = data;
 
@@ -6,12 +7,15 @@ function photographerFactory(data) {
     function getUserCardDOM() {
         const article = document.createElement( 'article' );
         const img = document.createElement( 'img' );
-        img.setAttribute("src", picture)
-        img.setAttribute("alt", name)
+        img.setAttribute("src", picture);
+        img.setAttribute("alt", name);
         const h2 = document.createElement( 'h2' );
         const pCity = document.createElement('p');
+        pCity.setAttribute("id", "pcity");
         const pTagline = document.createElement('p');
+        pTagline.setAttribute("id", "ptagline");
         const pPrice = document.createElement('p');
+        pPrice.setAttribute("id", "pprice");
         const lienPagePhotographer = document.createElement('a');
         pTagline.textContent = tagline;
         pCity.textContent = city+", "+country;

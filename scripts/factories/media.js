@@ -1,8 +1,11 @@
 
+// eslint-disable-next-line no-unused-vars
 function mediaFactory(data){
 
-    const { id, photographerId, title, image,video, likes, date} =data;
+    // eslint-disable-next-line no-unused-vars
+    const { photographerId, title, image,video, likes, date} =data;
 
+     // eslint-disable-next-line no-unused-vars
      const videoMedia = `assets/images/${video}`;
       const picture = `assets/SamplePhotos/${photographerId}"/"${image}`;
       const picture2 = picture.replace(/[&#,+()$~%'":*?<>-]/g,'');
@@ -64,7 +67,7 @@ let media = undefined;
         numberLikes.textContent = likes;
         
         const imgLikes = document.createElement( 'img' );
-        imgLikes.src = 'assets/icons/heart.png';
+        imgLikes.src = 'assets/icons/heart.svg';
         imgLikes.alt = 'likes';
 
         divLikes.appendChild(numberLikes);

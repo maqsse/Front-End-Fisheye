@@ -1,6 +1,8 @@
 
+// eslint-disable-next-line no-unused-vars
 function displayModal() {
     const modal = document.getElementById("contact_modal");
+    // eslint-disable-next-line no-undef
     tabindexSet(-1);
 	modal.classList.add("modal-show");
     modal.querySelector("img").focus();
@@ -10,6 +12,7 @@ function displayModal() {
 
 function closeModal() {
     const modal = document.getElementById("contact_modal");
+    // eslint-disable-next-line no-undef
     tabindexSet(0);
 	modal.classList.remove("modal-show");
     setTimeout( () => document.querySelector("main .contact_button").focus() , 50);
@@ -42,6 +45,7 @@ function resetFormData() {
     document.getElementById("yourMessage").value = '';
 }
 
+// eslint-disable-next-line no-unused-vars
 function sendForm(event) {
     event.preventDefault();
 

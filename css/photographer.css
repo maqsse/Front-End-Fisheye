@@ -37,7 +37,7 @@
     border-radius: 5px;
     cursor: pointer;
     position: relative;
-    top: 10%;
+    top: 30%;
     left: 130%;
     
 }
@@ -190,6 +190,7 @@ form input {
     white-space: nowrap;
     overflow: hidden;
     color: #911C1C;
+    font-weight: normal;
 }
 /* Hover/focus */
 
